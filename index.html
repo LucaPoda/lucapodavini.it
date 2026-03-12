@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Podavini - AI Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #1a1b21;
+            color: #e2e8f0;
+        }
+
+        .central-band {
+            background-color: rgba(43, 45, 56, 0.92); 
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+
+        .btn-outline {
+            border: 1px solid #d1d5db;
+            color: #d1d5db;
+            border-radius: 9999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background-color: #f3f4f6;
+            color: #111827;
+        }
+
+        /* Nuovi Divisori */
+        .divider-short {
+            width: 2.5rem;
+            height: 2px;
+            background-color: #e5e7eb;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        .divider-wide {
+            width: 100%;
+            height: 1px;
+            background-color: #4b5563;
+            margin: 2rem 0;
+            opacity: 0.5;
+        }
+
+        .table-row-custom {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            border-bottom: 1px solid #4b5563;
+            padding: 0.6rem 0;
+            font-size: 0.85rem;
+        }
+
+        #scrollTopBtn {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+        }
+        #scrollTopBtn:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+
+    <div class="max-w-3xl mx-auto central-band min-h-screen relative flex flex-col">
+        <div class="px-6 py-16 md:px-14 flex-grow">
+            <header class="text-center mb-16" id="header-container"></header>
+
+            <section id="about" class="pt-8 scroll-mt-4">
+                <div class="divider-short"></div>
+                <h2 class="text-center text-xl tracking-[0.3em] font-medium uppercase mb-6 text-white">About Me</h2>
+                <div class="divider-wide"></div>
+                <div id="about-container" class="space-y-6 text-sm leading-relaxed text-gray-300 italic text-justify"></div>
+            </section>
+
+            <section id="projects" class="pt-16 scroll-mt-4">
+                <div class="divider-short"></div>
+                <h2 class="text-center text-xl tracking-[0.3em] font-medium uppercase mb-6 text-white">Projects Portfolio</h2>
+                <div class="divider-wide"></div>
+                <div id="projects-container"></div>
+            </section>
+
+            <section id="education" class="pt-16 scroll-mt-4">
+                <div class="divider-short"></div>
+                <h2 class="text-center text-xl tracking-[0.3em] font-medium uppercase mb-6 text-white">Education</h2>
+                <div class="divider-wide"></div>
+                <div id="education-container"></div>
+            </section>
+
+            <section id="jobs" class="pt-16 scroll-mt-4">
+                <div class="divider-short"></div>
+                <h2 class="text-center text-xl tracking-[0.3em] font-medium uppercase mb-6 text-white">Past Jobs</h2>
+                <div class="divider-wide"></div>
+                <div id="jobs-container"></div>
+            </section>
+        </div>
+
+        <footer class="mt-auto border-t border-gray-600/50 pt-10 pb-8 text-center relative bg-black/20">
+            <h3 class="text-sm tracking-widest uppercase mb-6 text-gray-300">Let's build something great.</h3>
+            <div class="flex justify-center gap-6 mb-6" id="footer-links"></div>
+            <p class="text-xs text-gray-500">&copy; <span id="year"></span> Podavini Luca. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <button id="scrollTopBtn" class="fixed bottom-8 right-8 bg-[#374151] hover:bg-gray-200 hover:text-gray-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none z-50 transition-all border border-gray-500">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script type="module">
+        import { config } from './config.js';
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. HEADER
+        document.getElementById('header-container').innerHTML = `
+            <img src="${config.hero.profilePicture}" alt="Profile" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
+            <h1 class="text-3xl md:text-5xl tracking-[0.3em] font-light mb-8 text-white">${config.hero.name}</h1>
+            <h2 class="text-base md:text-lg tracking-widest mb-2 font-medium">${config.hero.title}</h2>
+            <h3 class="text-sm md:text-md text-gray-300 font-light mb-3">${config.hero.subtitle}</h3>
+            <p class="text-xs md:text-sm italic text-gray-400 mb-8">${config.hero.university}</p>
+            <div class="flex justify-center gap-4 mb-10">
+                <a href="${config.hero.socials.github}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="${config.hero.socials.linkedin}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="${config.hero.socials.email}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0"><i class="fa-solid fa-envelope text-lg"></i></a>
+                <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank"><i class="fa-solid fa-file-pdf text-lg"></i></a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#about" class="btn-outline text-xs">About Me</a>
+                <a href="#projects" class="btn-outline text-xs">Projects</a>
+                <a href="#education" class="btn-outline text-xs">Education</a>
+                <a href="#jobs" class="btn-outline text-xs">Jobs</a>
+            </div>
+        `;
+
+        document.getElementById('about-container').innerHTML = config.about.map(p => `<p>${p}</p>`).join('');
+
+        // 3. PROJECTS (Refactored per non avere hardcoding)
+        const projectsHtml = config.projects.map((proj, index) => {
+            const isEven = index % 2 === 0;
+            const floatClass = isEven ? 'md:float-right md:ml-8' : 'md:float-left md:mr-8';
+
+            const mediaTag = proj.preview.endsWith('.mp4')
+                ? `<video src="${proj.preview}" autoplay muted loop playsinline class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover"></video>`
+                : `<img src="${proj.preview}" alt="${proj.title}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover">`;
+
+            // Logica dinamica e universale per i bottoni
+            let buttonsHtml = '';
+            if (proj.report && proj.report.trim() !== "") {
+                buttonsHtml += `<a href="${proj.report}" target="_blank" class="btn-outline"><i class="fa-regular fa-file-lines"></i> REPORT</a>`;
+            }
+            if (proj.github && proj.github.trim() !== "") {
+                buttonsHtml += `<a href="${proj.github}" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GITHUB</a>`;
+            }
+            if (proj.demo && proj.demo.trim() !== "") {
+                buttonsHtml += `<a href="${proj.demo}" target="_blank" class="btn-outline"><i class="fa-brands fa-youtube"></i> DEMO</a>`;
+            }
+
+            return `
+                <div class="project-card flex flex-col md:block clear-both relative">
+                    <div class="media-container order-3 md:order-none w-full md:w-[45%] mb-6 ${floatClass} transition-all">
+                        <div class="p-1.5 bg-gray-800/40 rounded-lg border border-gray-700/50 shadow-lg">
+                            ${mediaTag}
+                        </div>
+                    </div>
+
+                    <h3 class="project-title order-1 md:order-none text-[0.9rem] tracking-[0.15em] font-bold text-white mb-2 md:mb-4 leading-snug uppercase pt-1 transition-all duration-300">
+                        ${proj.title}
+                    </h3>
+                    
+                    <p class="project-subtitle order-2 md:order-none text-sm text-gray-400 italic font-medium leading-relaxed mb-6">
+                        ${proj.subtitle}
+                    </p>
+
+                    <p class="project-desc order-4 md:order-none text-sm text-gray-300 leading-relaxed text-justify mb-8">
+                        ${proj.description}
+                    </p>
+
+                    <div class="order-5 md:order-none clear-both w-full flex flex-wrap justify-center gap-4 mt-2">
+                        ${buttonsHtml}
+                    </div>
+
+                    ${index !== config.projects.length - 1 ? '<div class="divider-wide mt-10"></div>' : ''}
+                </div>
+            `;
+        }).join('');
+        document.getElementById('projects-container').innerHTML = projectsHtml;
+
+        // 4. EDUCATION (Loghi centrati)
+        const eduHtml = config.education.map((edu, index) => {
+            let buttonsHtml = '';
+            if (edu.thesisPdf || edu.github) {
+                buttonsHtml += `<div class="mt-8 flex flex-wrap justify-center gap-4 w-full">`;
+                if (edu.thesisPdf && edu.thesisPdf.trim() !== "") buttonsHtml += `<a href="${edu.thesisPdf}" target="_blank" class="btn-outline"><i class="fa-solid fa-graduation-cap"></i> THESIS</a>`;
+                if (edu.github && edu.github.trim() !== "") buttonsHtml += `<a href="${edu.github}" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GITHUB</a>`;
+                buttonsHtml += `</div>`;
+            }
+
+            return `
+                <div>
+                    <div class="flex justify-between items-center gap-4 mb-6">
+                        <div>
+                            <h3 class="text-[0.9rem] tracking-[0.15em] font-bold text-white uppercase"><span class="font-bold">${edu.title}</span></h3>
+                            <p class="text-sm text-gray-300 mt-1 font-medium">${edu.course}</p>
+                        </div>
+                        <img src="${edu.logo}" alt="Logo" class="w-14 h-14 rounded object-cover border border-gray-600 bg-white shrink-0">
+                    </div>
+                    <div class="w-full mb-6 bg-gray-800/20 p-4 rounded border border-gray-700/50 shadow-md">
+                        <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">PERIOD:</span> <span class="text-gray-200">${edu.period}</span></div>
+                        <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">GRADUATION DATE:</span> <span class="text-gray-200">${edu.graduationDate}</span></div>
+                        <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">FINAL GRADE:</span> <span class="text-gray-200">${edu.finalGrade}</span></div>
+                        <div class="table-row-custom border-b-0"><span class="text-gray-400 tracking-wider text-xs font-semibold">THESIS:</span> <span class="text-gray-200">${edu.thesisTitle}</span></div>
+                    </div>
+                    <p class="text-xs font-medium text-gray-400 leading-relaxed">${edu.skills}</p>
+                    ${buttonsHtml}
+                    ${index !== config.education.length - 1 ? '<div class="divider-wide mt-10"></div>' : ''}
+                </div>
+            `;
+        }).join('');
+        document.getElementById('education-container').innerHTML = eduHtml;
+
+        // 5. JOBS (Loghi centrati, no sfondo)
+        const jobsHtml = config.jobs.map((job, index) => {
+            return `
+                <div>
+                    <div class="flex justify-between items-center gap-4 mb-6">
+                        <div>
+                            <h3 class="text-[0.9rem] tracking-[0.15em] font-bold text-white mb-1 uppercase">${job.role}</h3>
+                            <p class="text-sm font-semibold tracking-wider text-gray-200">${job.company} <span class="font-normal italic text-gray-400 ml-1">| ${job.location}</span></p>
+                        </div>
+                        <img src="${job.companyLogo}" alt="${job.company}" class="h-8 md:h-10 object-contain shrink-0">
+                    </div>
+                    <div class="w-full mb-6 bg-gray-800/20 p-4 rounded border border-gray-700/50 shadow-md">
+                        <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">PERIOD:</span> <span class="text-gray-200">${job.period}</span></div>
+                        <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">JOB KIND:</span> <span class="text-gray-200">${job.jobKind}</span></div>
+                        <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">ROLE:</span> <span class="text-gray-200">${job.role}</span></div>
+                        <div class="table-row-custom border-b-0"><span class="text-gray-400 tracking-wider text-xs font-semibold">STACK:</span> <span class="text-gray-200">${job.stack}</span></div>
+                    </div>
+                    <p class="text-xs italic text-gray-400 mb-4 border-l-2 border-gray-600 pl-3">${job.note}</p>
+                    <p class="text-xs font-medium text-gray-300 leading-relaxed">${job.tech}</p>
+                    ${index !== config.jobs.length - 1 ? '<div class="divider-wide mt-10"></div>' : ''}
+                </div>
+            `;
+        }).join('');
+        document.getElementById('jobs-container').innerHTML = jobsHtml;
+
+        // FOOTER LINKS
+        document.getElementById('footer-links').innerHTML = `
+            <a href="${config.hero.socials.github}" target="_blank" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="${config.hero.socials.linkedin}" target="_blank" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="${config.hero.socials.email}" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"><i class="fa-solid fa-envelope"></i> Email</a>
+        `;
+
+        // SCROLL TOP LOGIC
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.remove("opacity-0", "pointer-events-none");
+                scrollTopBtn.classList.add("opacity-100");
+            } else {
+                scrollTopBtn.classList.add("opacity-0", "pointer-events-none");
+                scrollTopBtn.classList.remove("opacity-100");
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ALGORITMO DI CENTRAMENTO BIDIREZIONALE
+        function alignProjectCards() {
+            if (window.innerWidth < 768) {
+                document.querySelectorAll('.project-title').forEach(el => el.style.paddingTop = '0px');
+                document.querySelectorAll('.media-container').forEach(el => el.style.marginTop = '0px');
+                return;
+            }
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                const title = card.querySelector('.project-title');
+                const subtitle = card.querySelector('.project-subtitle');
+                const desc = card.querySelector('.project-desc');
+                const media = card.querySelector('.media-container');
+
+                title.style.paddingTop = '0px'; 
+                media.style.marginTop = '0px';
+                
+                const textHeight = title.offsetHeight + subtitle.offsetHeight + desc.offsetHeight + 32; 
+                const mediaHeight = media.offsetHeight;
+
+                if (textHeight < mediaHeight && textHeight > 0) {
+                    const offset = (mediaHeight - textHeight) / 2;
+                    title.style.paddingTop = `${offset}px`;
+                } else if (mediaHeight < textHeight && mediaHeight > 0) {
+                    const offset = (textHeight - mediaHeight) / 2;
+                    media.style.marginTop = `${Math.min(offset, 60)}px`;
+                }
+            });
+        }
+        
+        window.addEventListener('load', () => {
+            alignProjectCards();
+            setTimeout(alignProjectCards, 400); 
+        });
+        window.addEventListener('resize', alignProjectCards);
+    </script>
+</body>
+</html>
