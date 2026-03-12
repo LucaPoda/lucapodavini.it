@@ -6,15 +6,15 @@ export const config = {
         subtitle: "Intelligent Robots Path",
         university: "University of Trento",
         socials: {
-            github: "https://github.com/tuo-profilo",
-            linkedin: "https://linkedin.com/in/tuo-profilo",
-            email: "mailto:tuamail@example.com",
+            github: "https://github.com/LucaPoda",
+            linkedin: "https://www.linkedin.com/in/luca-podavini-090ab92aa",
+            email: "mailto:info@lucapodavini.it",
             cv: "assets/cv-podavini-luca.pdf"
         }
     },
     about: [
-        "AI Engineering student at the University of Trento, specialized in Intelligent Robots. My expertise spans from Reinforcement Learning (PPO) and Motion Planning to Real-time Computer Vision and Embedded Systems. I bridge the gap between high-level AI algorithms and low-level control, with a strong focus on C++, Rust, and ROS/ROS2. Currently developing custom controllers for robotic manipulation and exploring the intersection of AI, music and visual arts.",
-        "When I'm not coding or building robots, I'm deeply involved in the music scene as a DJ and event organizer. This passion has sharpened my skills in project management, leadership, and creative problem-solving under pressure."
+        "AI Engineering student at the University of Trento, specialized in Intelligent Robots. My expertise spans from Reinforcement Learning and Motion Planning to Real-time Computer Vision and Embedded Systems. I bridge the gap between high-level AI algorithms and low-level control, with a strong focus on C++, Rust, and ROS/ROS2. Currently developing custom controllers for robotic manipulation and exploring the intersection of AI, music and visual arts.",
+        "When I'm not coding or programming robots, I'm deeply involved in the music scene as a DJ and event organizer. This passion has sharpened my skills in project management, leadership, and creative problem-solving under pressure."
     ],
     projects: [
         {
@@ -24,7 +24,7 @@ export const config = {
             description: "Motion planning project on an Agile X LIMO. Explored both Combinatorial and Sampling Based planning to solve the Victim Rescue problem in a controlled environment.",
             preview: "assets/project-previews/preview-robot-planning.png",
             report: "assets/projet-reports/report-robot-planning.pdf",
-            github: "a",
+            github: "https://github.com/LucaPoda/loco_nav",
             demo: ""
         },
         {
@@ -34,7 +34,7 @@ export const config = {
             description: "The project was divided into three assignments: reactive control, optimal control, and reinforcement learning. For the final assignment, the PPO algorithm was implemented to solve a navigation problem for a unicycle in a complex obstacle-filled environment.",
             preview: "assets/project-previews/preview-orc.mp4",
             report: "assets/projet-reports/report-orc.pdf",
-            github: "a",
+            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
             demo: ""
         },
         {
@@ -44,7 +44,7 @@ export const config = {
             description: "Task planning project set in an Interplanetary Museum Vault, implemented different planning techniques such as classical planning, temporal planning, or hierarchical task networks. Compared the performance of different solvers to discover their peculiarities.",
             preview: "assets/project-previews/preview-automated-planning.png",
             report: "assets/projet-reports/report-automated-planning.pdf",
-            github: "a",
+            github: "https://github.com/Frasor2002/AP_Project",
             demo: ""
         },
         {
@@ -93,7 +93,7 @@ export const config = {
             thesisTitle: "MOVE FUZZER",
             skills: "C | C++ | Python | Rust | Embedded C | Embedded Applications | Linux Shell | Git | Algorithms & Data Structures | Operating Systems | 3D Printing | Basic 3D Design | Basic Electronic",
             thesisPdf: "assets/projet-reports/thesis-bacherold.pdf",
-            github: ""
+            github: "https://github.com/LucaPoda/move-fuzzer/"
         },
         {
             level: "Diploma",
@@ -105,8 +105,8 @@ export const config = {
             finalGrade: "100/100",
             thesisTitle: "FULL STACK WEB APP",
             skills: "C | C++ | Java | C# | Full Stack Web Development | SQL | JavaScript | Games Development | Networking | Git",
-            thesisPdf: "assets/projet-reports/thesis-diploma.pdf",
-            github: ""
+            thesisPdf: "",
+            github: "https://github.com/LucaPoda/try_my_challenge"
         }
     ],
     jobs: [
