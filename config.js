@@ -1,7 +1,7 @@
 export const config = {
     hero: {
         profilePicture: "assets/profile-picture.jpeg",
-        name: "PODAVINI LUCA",
+        name: "LUCA PODAVINI",
         title: "Artificial Intelligence Systems",
         subtitle: "Intelligent Robots Path",
         university: "University of Trento",
