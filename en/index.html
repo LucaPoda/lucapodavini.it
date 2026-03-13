@@ -12,9 +12,11 @@
 
     <script>
         const savedLang = localStorage.getItem('preferredLang');
-        // Se l'utente in passato ha scelto Italiano, rimandalo alla root
+        const suffix = window.location.search + window.location.hash;
+
+        // Se l'utente in passato ha scelto Italiano, rimandalo alla root portandosi dietro il suffisso
         if (savedLang === 'it') {
-            window.location.replace('/');
+            window.location.replace('/' + suffix);
         }
     </script>
 

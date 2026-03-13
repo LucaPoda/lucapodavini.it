@@ -13,17 +13,20 @@
     <script>
         const savedLang = localStorage.getItem('preferredLang');
         const browserLang = navigator.language || navigator.userLanguage;
+        
+        // Cattura ancore (#) e parametri (?) attuali
+        const suffix = window.location.search + window.location.hash;
 
-        // Se l'utente in passato ha scelto Inglese, rimandalo lì
+        // Se l'utente in passato ha scelto Inglese, rimandalo lì portandosi dietro il suffisso
         if (savedLang === 'en') {
-            window.location.replace('/en/');
+            window.location.replace('/en/' + suffix);
         } 
-        // Se è la primissima visita e il browser non è italiano, mandalo in Inglese
+        // Se è la primissima visita e il browser non è italiano, mandalo in Inglese col suffisso
         else if (!savedLang && !browserLang.startsWith('it')) {
-            window.location.replace('/en/'); 
+            window.location.replace('/en/' + suffix); 
         }
     </script>
-
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/styles.css">

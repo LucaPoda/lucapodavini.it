@@ -27,7 +27,7 @@ export async function initApp(lang) {
         const subtitleHtml = hasSubtitle ? `<p class="text-[0.8rem] tracking-[0.1em] text-gray-200 mb-4 uppercase font-medium">${proj.subtitle}</p>` : '';
 
         return `
-            <div class="project-card flex flex-col w-full opacity-0 transition-opacity duration-500">
+            <div id="${proj.id}" class="project-card flex flex-col w-full opacity-0 transition-opacity duration-500">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-6">
                     <div class="order-1 ${isEven ? 'md:order-1' : 'md:order-2'} flex flex-col justify-center project-text-header">
                         <h3 class="text-[0.9rem] tracking-[0.15em] font-bold text-white ${titleMargin} leading-snug uppercase">${proj.title}</h3>
@@ -110,9 +110,9 @@ export async function initApp(lang) {
         <div class="max-w-3xl mx-auto central-band min-h-screen relative flex flex-col">
             
             <div class="absolute top-6 right-8 z-50 flex gap-2 items-center text-white">
-                <a href="/en/" onclick="localStorage.setItem('preferredLang', 'en')" class="lang-btn ${lang === 'en' ? 'active' : ''}">EN</a>
+                <button onclick="localStorage.setItem('preferredLang', 'en'); window.location.href='/en/' + window.location.search + window.location.hash;" class="lang-btn ${lang === 'en' ? 'active' : ''}">EN</button>
                 <span class="text-gray-500 text-xs">|</span>
-                <a href="/" onclick="localStorage.setItem('preferredLang', 'it')" class="lang-btn ${lang === 'it' ? 'active' : ''}">IT</a>
+                <button onclick="localStorage.setItem('preferredLang', 'it'); window.location.href='/' + window.location.search + window.location.hash;" class="lang-btn ${lang === 'it' ? 'active' : ''}">IT</button>
             </div>
 
             <div class="px-6 py-16 md:px-14 flex-grow">
@@ -234,4 +234,15 @@ export async function initApp(lang) {
     // Esegui allineamento dopo il caricamento delle immagini
     setTimeout(alignProjectCards, 150);
     window.addEventListener('resize', alignProjectCards);
+
+    // 5. Gestione dell'ancora al caricamento (Scroll to Hash)
+    if (window.location.hash) {
+        // Aspettiamo un istante che le immagini e le card si allineino
+        setTimeout(() => {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 200); 
+    }
 }
