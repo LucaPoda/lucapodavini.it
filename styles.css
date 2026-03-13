@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #1a1b21;
+    color: #e2e8f0;
+}
+
+.central-band {
+    background-color: rgba(43, 45, 56, 0.92); 
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+.btn-outline {
+    border: 1px solid #d1d5db;
+    color: #d1d5db;
+    border-radius: 9999px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.divider-short {
+    width: 2.5rem;
+    height: 2px;
+    background-color: #e5e7eb;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.divider-wide {
+    width: 100%;
+    height: 1px;
+    background-color: #4b5563;
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+.table-row-custom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border-bottom: 1px solid #4b5563;
+    padding: 0.75rem 0;
+    font-size: 0.85rem;
+    align-items: start;
+}
+
+#scrollTopBtn {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+}
+#scrollTopBtn:hover {
+    transform: translateY(-5px);
+}
+
+.lang-btn {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+.lang-btn.active {
+    opacity: 1;
+    font-weight: bold;
+}
