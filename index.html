@@ -62,12 +62,15 @@
             opacity: 0.5;
         }
 
+        /* TABELLE AGGIORNATE: 50% / 50% */
         .table-row-custom {
             display: grid;
-            grid-template-columns: 140px 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             border-bottom: 1px solid #4b5563;
-            padding: 0.6rem 0;
+            padding: 0.75rem 0;
             font-size: 0.85rem;
+            align-items: start;
         }
 
         #scrollTopBtn {
@@ -129,9 +132,9 @@
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // 1. HEADER (Title attributes aggiunti sui bottoni)
+        // 1. HEADER (Aggiornato con icona address-card)
         document.getElementById('header-container').innerHTML = `
-            <img src="${config.hero.profilePicture}" alt="Luca Podavini Profile Picture" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
+            <img src="${config.hero.profilePicture}" alt="Luca Podavini Profile Picture" class="w-24 md:w-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
             <h1 class="text-3xl md:text-5xl tracking-[0.3em] font-light mb-8 text-white">${config.hero.name}</h1>
             <h2 class="text-base md:text-lg tracking-widest mb-2 font-medium">${config.hero.title}</h2>
             <h3 class="text-sm md:text-md text-gray-300 font-light mb-3">${config.hero.subtitle}</h3>
@@ -142,7 +145,7 @@
                 <a href="${config.hero.socials.email}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" title="Email Me"><i class="fa-solid fa-envelope text-lg"></i></a>
                 <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="Curriculum Vitae"><i class="fa-solid fa-address-card text-lg"></i></a>
             </div>
-                <div class="flex flex-wrap justify-center gap-3">
+            <div class="flex flex-wrap justify-center gap-3">
                 <a href="#about" class="btn-outline text-xs">About Me</a>
                 <a href="#projects" class="btn-outline text-xs">Projects</a>
                 <a href="#education" class="btn-outline text-xs">Education</a>
@@ -156,14 +159,12 @@
         const projectsHtml = config.projects.map((proj, index) => {
             const isEven = index % 2 === 0;
 
-            // Generazione dinamica dell'alt text e aria-label per accessibilità
             const altText = `Preview: ${proj.title}${proj.subtitle ? ', ' + proj.subtitle : ''}`;
 
             const mediaTag = proj.preview.endsWith('.mp4')
                 ? `<video src="${proj.preview}" autoplay muted loop playsinline aria-label="${altText}" title="${altText}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover"></video>`
                 : `<img src="${proj.preview}" alt="${altText}" title="${altText}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover">`;
 
-            // Bottoni dinamicamente filtrati
             let buttonsHtml = '';
             if (proj.report && proj.report.trim() !== "") buttonsHtml += `<a href="${proj.report}" target="_blank" class="btn-outline"><i class="fa-regular fa-file-lines"></i> REPORT</a>`;
             if (proj.github && proj.github.trim() !== "") buttonsHtml += `<a href="${proj.github}" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GITHUB</a>`;
@@ -279,7 +280,7 @@
         }).join('');
         document.getElementById('jobs-container').innerHTML = jobsHtml;
 
-        // FOOTER LINKS (Ridisegnato con testi in chiaro estesi)
+        // FOOTER LINKS
         document.getElementById('footer-links').innerHTML = `
             <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-14 mb-4 text-sm px-6">
                 <div class="flex flex-col gap-4 items-start mx-auto md:mx-0">
