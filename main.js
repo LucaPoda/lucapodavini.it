@@ -110,9 +110,9 @@ export async function initApp(lang) {
         <div class="max-w-3xl mx-auto central-band min-h-screen relative flex flex-col">
             
             <div class="absolute top-6 right-8 z-50 flex gap-2 items-center text-white">
-                <button onclick="localStorage.setItem('preferredLang', 'en'); window.location.href='/en/' + window.location.search + window.location.hash;" class="lang-btn ${lang === 'en' ? 'active' : ''}">EN</button>
+                <button onclick="localStorage.setItem('preferredLang', 'en'); window.location.href='/en/';" class="lang-btn ${lang === 'en' ? 'active' : ''}">EN</button>
                 <span class="text-gray-500 text-xs">|</span>
-                <button onclick="localStorage.setItem('preferredLang', 'it'); window.location.href='/' + window.location.search + window.location.hash;" class="lang-btn ${lang === 'it' ? 'active' : ''}">IT</button>
+                <button onclick="localStorage.setItem('preferredLang', 'it'); window.location.href='/';" class="lang-btn ${lang === 'it' ? 'active' : ''}">IT</button>
             </div>
 
             <div class="px-6 py-16 md:px-14 flex-grow">
