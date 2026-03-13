@@ -20,27 +20,52 @@ export const config = {
         {
             id: "robot-planning",
             title: "ROBOT PLANNING & ITS APPLICATIONS",
-            subtitle: "PRM, Approx. Cell Decomposition, Multipoint Dubins, Orienteering, Polygon Inflation, Shortcutting",
-            description: "Motion planning project on an Agile X LIMO. Explored both Combinatorial and Sampling Based planning to solve the Victim Rescue problem in a controlled environment.",
+            subtitle: "", 
+            topics: "PRM, Approx. Cell Decomposition, Multipoint Dubins, Orienteering, Polygon Inflation, Shortcutting",
+            description: "Motion planning project on an Agile X LIMO. Explored both Combinatorial and Sampling Based planning to solve the Victim Rescue problem in a controlled environment. Explored different techniques to design the full planning pipeline that includes reading the map and applying obstacle inflation, building the roadmap with a sampling-based or combinatorial approach, computing shortest paths, the orienteering problem and generating the final Dubins trajectory.",
             preview: "assets/project-previews/preview-robot-planning.png",
             report: "assets/projet-reports/report-robot-planning.pdf",
             github: "https://github.com/LucaPoda/loco_nav",
             demo: ""
         },
         {
-            id: "robot-control",
-            title: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
-            subtitle: "Reactive Control, Optimal Control, Reinforcement Learning",
-            description: "The project was divided into three assignments: reactive control, optimal control, and reinforcement learning. For the final assignment, the PPO algorithm was implemented to solve a navigation problem for a unicycle in a complex obstacle-filled environment.",
+            id: "unicycle-rl",
+            title: "REINFORCEMENT LEARNING for UNICYCLE ROBOT",
+            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+            topics: "Reinforcement Learning, PPO Algorithm, Unicycle Kinematics",
+            description: "Final and most important assignment of the Optimization and Learning for Robot Control course. Explored different reinforcement learning techniques applied to an unicycle robot. Implemented trajectory tracking using the REINFORCE algorithm and a the the PPO (Proximal Policy Optimization) algorithm to solve a full navigation problem in an obstacle-filled environment (shown in the preview).",
             preview: "assets/project-previews/preview-orc.mp4",
             report: "assets/projet-reports/report-orc.pdf",
             github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
             demo: ""
         },
         {
+            id: "humanoid-tsid",
+            title: "REACTIVE CONTROL (TSID) on HUMANOID ROBOT",
+            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+            topics: "Reactive Control, Task Space Inverse Dynamics (TSID), Humanoid Robotics",
+            description: "First assignment Optimization and Learning for Robot Control course.. Developed a reactive control framework using Task Space Inverse Dynamics (TSID) to enable a humanoid robot to track complex trajectories and perform walking motions while maintaining dynamic balance.",
+            preview: "assets/project-previews/preview-reactive-control.png", // Inserisci qui il tuo media
+            report: "assets/projet-reports/report-reactive-control.pdf", // Inserisci il pdf corretto
+            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
+            demo: ""
+        },
+        {
+            id: "ur5-optimal-control",
+            title: "OPTIMAL CONTROL for UR5 MANIPULATOR",
+            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+            topics: "Optimal Control, UR5 Manipulator, Trajectory Optimization",
+            description: "Second assignment of the Optimization and Learning for Robot Control course, focused on Optimal Control. Applied both trajectory tracking and path tracking techniques optimization techniques to a UR5 industrial robotic arm.",
+            preview: "assets/project-previews/preview-optimal-control.jpeg", // Inserisci qui il tuo media
+            report: "assets/projet-reports/report-optimal-control.pdf", // Inserisci il pdf corretto
+            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
+            demo: ""
+        },
+        {
             id: "automated-planning",
-            title: "AUTOMATED PLANNING, THEORY AND PRACTICE",
-            subtitle: "Classical Planning, Temporal Planning, Hierarchical Task Networks, PDDL, HDDL",
+            title: "INTERPLANETARY MUSEUM VAULT",
+            subtitle: "AUTOMATED PLANNING, THEORY AND PRACTICE",
+            topics: "Classical Planning, Temporal Planning, Hierarchical Task Networks, PDDL, HDDL",
             description: "Task planning project set in an Interplanetary Museum Vault, implemented different planning techniques such as classical planning, temporal planning, or hierarchical task networks. Compared the performance of different solvers to discover their peculiarities.",
             preview: "assets/project-previews/preview-automated-planning.png",
             report: "assets/projet-reports/report-automated-planning.pdf",
@@ -48,23 +73,47 @@ export const config = {
             demo: ""
         },
         {
+            id: "deep-learning",
+            title: "Parameter Efficient Fine Tuning for CLIP",
+            subtitle: "DEEP LEARNING",
+            topics: "Zero-Shot CLIP, CoCoOp, CLIP-LoRA, DISEFT, Few-Shot Learning, PyTorch",
+            description: "This project explores Parameter Efficient Fine Tuning (PEFT) techniques applied to the CLIP model for image classification tasks. We implemented and compared several PEFT methods, including CoCoOp, CLIP-LoRA, and DISEFT, to evaluate their performance in few-shot learning scenarios. The project demonstrates how PEFT can significantly reduce the number of trainable parameters while maintaining competitive accuracy, making it a promising approach for adapting large pre-trained models to specific tasks with limited data.",
+            preview: "assets/project-previews/preview-deep-learning.png",
+            report: "assets/projet-reports/notebook.html",
+            github: "https://github.com/Frasor2002/DL_Project",
+            demo: ""
+        },
+        {
+            id: "nlu",
+            title: "NATURAL LANGUAGE UNDERSTANDING",
+            subtitle: "",
+            topics: "LSTM, Dropout Layers, AdamW, NT-AvSGD, Weight Tying, Variational Dropouts, Transformer, BERT, Intent Classification, Slot Filling, PyTorch",
+            description: "This project focuses on Language Modelling and Natural Language Understanding (NLU). Various architectures have been compared, including LSTM-based models with dropout layers and advanced optimization techniques like AdamW and NT-AvSGD, as well as transformer-based models such as BERT. The project addresses both intent classification and slot filling tasks, demonstrating the effectiveness of different approaches in understanding user queries and extracting relevant information for dialogue management.",
+            preview: "assets/project-previews/preview-nlu.png",
+            report: "assets/projet-reports/report-lm-nlu.pdf",
+            github: "https://github.com/LucaPoda/NLU_PROJECT",
+            demo: ""
+        },
+        {
             id: "claw-machine",
-            title: "EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS",
-            subtitle: "Embedded C, MSP-432 (ARM Cortex M4), Bluetooth Control, LCD Display, Stepper Motors, Servo, Finite State Machine, 3D Printing, 3D Modelling",
-            description: "Embedded software project consisting of the creation and programming of a claw machine. We built everything from scratch, starting with designing the aluminum frame, 3D printing some components, designing the electronics, and finally programming the entire software in C.",
+            title: "CLAW MACHINE",
+            subtitle: "EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS",
+            topics: "Embedded C, MSP-432 (ARM Cortex M4), Bluetooth Control, LCD Display, Stepper Motors, Servo, Finite State Machine, 3D Printing, 3D Modelling",
+            description: "Embedded software project consisting of the creation and programming of a claw machine. We built everything from scratch, starting with designing the aluminum frame, 3D printing some components, designing the electronics, and finally programming the entire software in C. This project was presented at Fablab Trento during ICT Days 2024.",
             preview: "assets/project-previews/preview-embedded-software-iot.png",
-            report: "https://github.com/tuo-profilo/claw-machine#readme",
-            github: "a",
-            demo: "a"
+            report: "https://github.com/Clown-Machine/ClawMachine/blob/main/README.md",
+            github: "https://github.com/Clown-Machine/ClawMachine",
+            demo: "https://youtu.be/jCsASMP_P0s?si=dVV_ODnANKmjaA7-"
         },
         {
             id: "visual-hive",
             title: "VISUAL-HIVE",
-            subtitle: "C++, Open CV, MIDI Protocol, Ableton Link, Multithreading, Real-time Data Processing, Low-latency Visualization",
-            description: "This VJ program was custom-developed for my needs during events, aiming to be as simple and intuitive as possible. It allows you to overlay a background graphic (video loop) onto a foreground logo, allowing you to create multiple combinations in real time by applying effects such as strobe or a logo that bounces in time with the music. Visual Hive synchronizes with DJ software via Ableton Link, which allows you to read BPM and song structure, allowing you to apply effects at the right time.",
+            subtitle: "PERSONAL PROJECT",
+            topics: "C++, Open CV, MIDI Protocol, Ableton Link, Multithreading, Real-time Data Processing, Low-latency Visualization",
+            description: "This custom VJ software was developed to meet the specific needs of live events, prioritizing simplicity and real-time performance. It enables seamless overlaying of foreground logos onto dynamic background loops, with integrated effects like strobe and beat-synced motion. By leveraging Ableton Link, Visual-Hive synchronizes with DJ software to extract BPM and song structure, ensuring perfectly timed visual transitions. While currently CLI-based, development is ongoing to integrate full MIDI mapping and a dedicated GUI.",
             preview: "assets/project-previews/preview-visual-hive.png",
-            report: "a",
-            github: "",
+            report: "",
+            github: "https://github.com/LucaPoda/visual-hive",
             demo: ""
         }
     ],
