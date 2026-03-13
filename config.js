@@ -13,7 +13,7 @@ export const config = {
         }
     },
     about: [
-        "AI Engineering student at the University of Trento, specialized in Intelligent Robots. My expertise spans from Reinforcement Learning and Motion Planning to Real-time Computer Vision and Embedded Systems. I bridge the gap between high-level AI algorithms and low-level control, with a strong focus on C++, Rust, and ROS/ROS2. Currently developing custom controllers for robotic manipulation and exploring the intersection of AI, music and visual arts.",
+        "AI Engineering student at the University of Trento, specialized in Intelligent Robots. My expertise spans from Reinforcement Learning and Motion Planning to Real-time Computer Vision and Embedded Systems. I bridge the gap between high-level AI algorithms and low-level control, with a strong focus on C++, Rust, and ROS/ROS2. I'm currently developing custom controllers for collaborative robotics, and for some personal projects, I'm exploring the intersection of artificial intelligence, music, and visual arts.",
         "When I'm not coding or programming robots, I'm deeply involved in the music scene as a DJ and event organizer. This passion has sharpened my skills in project management, leadership, and creative problem-solving under pressure."
     ],
     projects: [
@@ -21,7 +21,7 @@ export const config = {
             id: "robot-planning",
             title: "ROBOT PLANNING & ITS APPLICATIONS",
             subtitle: "", 
-            topics: "PRM, Approx. Cell Decomposition, Multipoint Dubins, Orienteering, Polygon Inflation, Shortcutting",
+            topics: "PRM, Approximate Cell Decomposition, Multipoint Dubins, Orienteering, Polygon Inflation, Shortcutting, ROS, RViz, Gazebo, Loco Nav, Simulation, Agile X LIMO, Victim Rescue",
             description: "Motion planning project on an Agile X LIMO. Explored both Combinatorial and Sampling Based planning to solve the Victim Rescue problem in a controlled environment. Explored different techniques to design the full planning pipeline that includes reading the map and applying obstacle inflation, building the roadmap with a sampling-based or combinatorial approach, computing shortest paths, the orienteering problem and generating the final Dubins trajectory.",
             preview: "assets/project-previews/preview-robot-planning.png",
             report: "assets/projet-reports/report-robot-planning.pdf",
@@ -32,7 +32,7 @@ export const config = {
             id: "unicycle-rl",
             title: "REINFORCEMENT LEARNING for UNICYCLE ROBOT",
             subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
-            topics: "Reinforcement Learning, PPO Algorithm, Unicycle Kinematics",
+            topics: "Reinforcement Learning, PPO Algorithm, REINFORCE algorithm, Unicycle Kinematics, Trajectory Tracking, Navigation, Obstacle Avoidance, LIDAR",
             description: "Final and most important assignment of the Optimization and Learning for Robot Control course. Explored different reinforcement learning techniques applied to an unicycle robot. Implemented trajectory tracking using the REINFORCE algorithm and a the the PPO (Proximal Policy Optimization) algorithm to solve a full navigation problem in an obstacle-filled environment (shown in the preview).",
             preview: "assets/project-previews/preview-orc.mp4",
             report: "assets/projet-reports/report-orc.pdf",

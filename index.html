@@ -94,7 +94,7 @@
             <section id="projects" class="pt-16 scroll-mt-4">
                 <div class="divider-short"></div>
                 <h2 class="text-center text-xl tracking-[0.3em] font-medium uppercase mb-6 text-white">Projects Portfolio</h2>
-                <div class="divider-wide"></div>
+                <div class="divider-wide mb-10"></div>
                 <div id="projects-container"></div>
             </section>
 
@@ -131,7 +131,7 @@
 
         // 1. HEADER
         document.getElementById('header-container').innerHTML = `
-            <img src="${config.hero.profilePicture}" alt="Profile" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
+            <img src="${config.hero.profilePicture}" alt="Profile" class="w-24 md:w-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
             <h1 class="text-3xl md:text-5xl tracking-[0.3em] font-light mb-8 text-white">${config.hero.name}</h1>
             <h2 class="text-base md:text-lg tracking-widest mb-2 font-medium">${config.hero.title}</h2>
             <h3 class="text-sm md:text-md text-gray-300 font-light mb-3">${config.hero.subtitle}</h3>
@@ -152,61 +152,67 @@
 
         document.getElementById('about-container').innerHTML = config.about.map(p => `<p>${p}</p>`).join('');
 
-        // 3. PROJECTS
+        // 3. PROJECTS (Smart Layout ibrido JS/Tailwind)
         const projectsHtml = config.projects.map((proj, index) => {
             const isEven = index % 2 === 0;
-            const floatClass = isEven ? 'md:float-right md:ml-8' : 'md:float-left md:mr-8';
 
             const mediaTag = proj.preview.endsWith('.mp4')
                 ? `<video src="${proj.preview}" autoplay muted loop playsinline class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover"></video>`
                 : `<img src="${proj.preview}" alt="${proj.title}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover">`;
 
-            // Logica bottoni
+            // Bottoni dinamicamente filtrati
             let buttonsHtml = '';
-            if (proj.report && proj.report.trim() !== "") {
-                buttonsHtml += `<a href="${proj.report}" target="_blank" class="btn-outline"><i class="fa-regular fa-file-lines"></i> REPORT</a>`;
-            }
-            if (proj.github && proj.github.trim() !== "") {
-                buttonsHtml += `<a href="${proj.github}" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GITHUB</a>`;
-            }
-            if (proj.demo && proj.demo.trim() !== "") {
-                buttonsHtml += `<a href="${proj.demo}" target="_blank" class="btn-outline"><i class="fa-brands fa-youtube"></i> DEMO</a>`;
-            }
+            if (proj.report && proj.report.trim() !== "") buttonsHtml += `<a href="${proj.report}" target="_blank" class="btn-outline"><i class="fa-regular fa-file-lines"></i> REPORT</a>`;
+            if (proj.github && proj.github.trim() !== "") buttonsHtml += `<a href="${proj.github}" target="_blank" class="btn-outline"><i class="fa-brands fa-github"></i> GITHUB</a>`;
+            if (proj.demo && proj.demo.trim() !== "") buttonsHtml += `<a href="${proj.demo}" target="_blank" class="btn-outline"><i class="fa-brands fa-youtube"></i> DEMO</a>`;
 
-            // Subtitle Logica
             const hasSubtitle = proj.subtitle && proj.subtitle.trim() !== "";
             const titleMargin = hasSubtitle ? 'mb-1' : 'mb-4';
             const subtitleHtml = hasSubtitle 
-                ? `<p class="project-course order-2 md:order-none text-[0.8rem] tracking-[0.1em] text-gray-200 mb-4 uppercase font-medium">${proj.subtitle}</p>` 
+                ? `<p class="text-[0.8rem] tracking-[0.1em] text-gray-200 mb-4 uppercase font-medium">${proj.subtitle}</p>` 
                 : '';
 
             return `
-                <div class="project-card flex flex-col md:block clear-both relative">
-                    <div class="media-container order-4 md:order-none w-full md:w-[45%] mb-6 ${floatClass} transition-all">
-                        <div class="p-1.5 bg-gray-800/40 rounded-lg border border-gray-700/50 shadow-lg">
-                            ${mediaTag}
+                <div class="project-card flex flex-col w-full opacity-0 transition-opacity duration-500">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-6">
+                        
+                        <div class="order-1 ${isEven ? 'md:order-1' : 'md:order-2'} flex flex-col justify-center project-text-header">
+                            <h3 class="text-[0.9rem] tracking-[0.15em] font-bold text-white ${titleMargin} leading-snug uppercase">
+                                ${proj.title}
+                            </h3>
+                            ${subtitleHtml}
+                            <p class="text-sm text-gray-400 italic font-medium leading-relaxed">
+                                ${proj.topics}
+                            </p>
+
+                            <div class="side-content hidden mt-6">
+                                <p class="text-sm text-gray-300 leading-relaxed text-justify mb-8">
+                                    ${proj.description}
+                                </p>
+                                <div class="w-full flex flex-wrap justify-center gap-4">
+                                    ${buttonsHtml}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-2 ${isEven ? 'md:order-2' : 'md:order-1'} project-media">
+                            <div class="p-1.5 bg-gray-800/40 rounded-lg border border-gray-700/50 shadow-lg">
+                                ${mediaTag}
+                            </div>
                         </div>
                     </div>
 
-                    <h3 class="project-title order-1 md:order-none text-[0.9rem] tracking-[0.15em] font-bold text-white ${titleMargin} leading-snug uppercase pt-1 transition-all duration-300">
-                        ${proj.title}
-                    </h3>
-                    
-                    ${subtitleHtml}
-
-                    <p class="project-topics order-3 md:order-none text-sm text-gray-400 italic font-medium leading-relaxed mb-6">
-                        ${proj.topics}
-                    </p>
-
-                    <p class="project-desc order-5 md:order-none text-sm text-gray-300 leading-relaxed text-justify mb-8">
-                        ${proj.description}
-                    </p>
-
-                    <div class="order-6 md:order-none clear-both w-full flex flex-wrap justify-center gap-4 mt-2">
-                        ${buttonsHtml}
+                    <div class="order-3 bottom-content">
+                        <p class="text-sm text-gray-300 leading-relaxed text-justify mb-8">
+                            ${proj.description}
+                        </p>
+                        <div class="w-full flex flex-wrap justify-center gap-4">
+                            ${buttonsHtml}
+                        </div>
                     </div>
 
-                    ${index !== config.projects.length - 1 ? '<div class="divider-wide mt-10"></div>' : ''}
+                    ${index !== config.projects.length - 1 ? '<div class="divider-wide w-full mt-12 mb-10 order-4"></div>' : ''}
                 </div>
             `;
         }).join('');
@@ -293,47 +299,48 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ALGORITMO DI CENTRAMENTO BIDIREZIONALE AGGIORNATO
+        // --- INTELLIGENT LAYOUT ALGORITHM ---
         function alignProjectCards() {
-            if (window.innerWidth < 768) {
-                document.querySelectorAll('.project-title').forEach(el => el.style.paddingTop = '0px');
-                document.querySelectorAll('.media-container').forEach(el => el.style.marginTop = '0px');
-                return;
-            }
+            const isMobile = window.innerWidth < 768;
 
             document.querySelectorAll('.project-card').forEach(card => {
-                const title = card.querySelector('.project-title');
-                const course = card.querySelector('.project-course'); // Nuovo elemento
-                const topics = card.querySelector('.project-topics');
-                const desc = card.querySelector('.project-desc');
-                const media = card.querySelector('.media-container');
+                const media = card.querySelector('.project-media');
+                const sideContent = card.querySelector('.side-content');
+                const bottomContent = card.querySelector('.bottom-content');
+                const textHeader = card.querySelector('.project-text-header');
 
-                title.style.paddingTop = '0px'; 
-                media.style.marginTop = '0px';
+                if (isMobile) {
+                    sideContent.classList.add('hidden');
+                    bottomContent.classList.remove('hidden');
+                } else {
+                    // Forziamo il layout affiancato temporaneamente per misurare gli spazi
+                    sideContent.classList.remove('hidden');
+                    bottomContent.classList.add('hidden');
+
+                    const textHeight = textHeader.offsetHeight;
+                    const mediaHeight = media.offsetHeight;
+
+                    // Se il blocco testo totale è più alto dell'immagine + una tolleranza di 70px, 
+                    // allora manda la descrizione a capo, sennò mantienila di fianco
+                    if (textHeight > mediaHeight + 100) {
+                        sideContent.classList.add('hidden');
+                        bottomContent.classList.remove('hidden');
+                    }
+                }
                 
-                // Calcolo dinamico che include la potenziale presenza del sottotitolo e i relativi margini
-                let textHeight = title.offsetHeight + topics.offsetHeight + desc.offsetHeight + 40; 
-                if (course) {
-                    textHeight += course.offsetHeight + 16; 
-                }
-
-                const mediaHeight = media.offsetHeight;
-
-                if (textHeight < mediaHeight && textHeight > 0) {
-                    const offset = (mediaHeight - textHeight) / 2;
-                    title.style.paddingTop = `${offset}px`;
-                } else if (mediaHeight < textHeight && mediaHeight > 0) {
-                    const offset = (textHeight - mediaHeight) / 2;
-                    media.style.marginTop = `${Math.min(offset, 60)}px`;
-                }
+                // Rivelazione fluida per evitare flickering
+                card.classList.remove('opacity-0');
             });
         }
-        
+
+        // Lanciamo il calcolo quando caricano i media (per avere le altezze corrette)
         window.addEventListener('load', () => {
             alignProjectCards();
-            setTimeout(alignProjectCards, 400); 
+            setTimeout(alignProjectCards, 500); 
         });
+        
         window.addEventListener('resize', alignProjectCards);
+
     </script>
 </body>
 </html>
