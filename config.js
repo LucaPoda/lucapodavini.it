@@ -7,13 +7,18 @@ export const config = {
         university: "University of Trento",
         socials: {
             github: "https://github.com/LucaPoda",
+            githubHandle: "github.com/LucaPoda",
             linkedin: "https://www.linkedin.com/in/luca-podavini-090ab92aa",
+            linkedinHandle: "in/luca-podavini",
             email: "mailto:info@lucapodavini.it",
+            emailAddress: "info@lucapodavini.it",
+            uniEmail: "mailto:luca.podavini@studenti.unitn.it",
+            uniEmailAddress: "luca.podavini@studenti.unitn.it",
             cv: "assets/cv-podavini-luca.pdf"
         }
     },
     about: [
-        "AI Engineering student at the University of Trento, specialized in Intelligent Robots. My expertise spans from Reinforcement Learning and Motion Planning to Real-time Computer Vision and Embedded Systems. I bridge the gap between high-level AI algorithms and low-level control, with a strong focus on C++, Rust, and ROS/ROS2. I'm currently developing custom controllers for collaborative robotics, and for some personal projects, I'm exploring the intersection of artificial intelligence, music, and visual arts.",
+        "AI Engineering student at the University of Trento, specialized in Intelligent Robots. My expertise spans from Reinforcement Learning and Motion Planning to Real-time Computer Vision and Embedded Systems. I bridge the gap between high-level AI algorithms and low-level control, with a strong focus on C++, Rust, and ROS/ROS2. Currently developing custom controllers for robotic manipulation in a collaborative environment and exploring the intersection of AI, music and visual arts.",
         "When I'm not coding or programming robots, I'm deeply involved in the music scene as a DJ and event organizer. This passion has sharpened my skills in project management, leadership, and creative problem-solving under pressure."
     ],
     projects: [
@@ -45,8 +50,8 @@ export const config = {
             subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
             topics: "Reactive Control, Task Space Inverse Dynamics (TSID), Humanoid Robotics",
             description: "First assignment Optimization and Learning for Robot Control course.. Developed a reactive control framework using Task Space Inverse Dynamics (TSID) to enable a humanoid robot to track complex trajectories and perform walking motions while maintaining dynamic balance.",
-            preview: "assets/project-previews/preview-reactive-control.png", // Inserisci qui il tuo media
-            report: "assets/projet-reports/report-reactive-control.pdf", // Inserisci il pdf corretto
+            preview: "assets/project-previews/preview-reactive-control.png",
+            report: "assets/projet-reports/report-reactive-control.pdf",
             github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
             demo: ""
         },
@@ -72,7 +77,7 @@ export const config = {
             github: "https://github.com/Frasor2002/AP_Project",
             demo: ""
         },
-        {
+                {
             id: "deep-learning",
             title: "Parameter Efficient Fine Tuning for CLIP",
             subtitle: "DEEP LEARNING",

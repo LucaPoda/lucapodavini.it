@@ -114,9 +114,9 @@
         </div>
 
         <footer class="mt-auto border-t border-gray-600/50 pt-10 pb-8 text-center relative bg-black/20">
-            <h3 class="text-sm tracking-widest uppercase mb-6 text-gray-300">Let's build something great.</h3>
-            <div class="flex justify-center gap-6 mb-6" id="footer-links"></div>
-            <p class="text-xs text-gray-500">&copy; <span id="year"></span> Podavini Luca. All rights reserved.</p>
+            <h3 class="text-sm tracking-widest uppercase mb-8 text-gray-300">Let's build something great.</h3>
+            <div id="footer-links"></div>
+            <p class="text-xs text-gray-500 mt-10">&copy; <span id="year"></span> Podavini Luca. All rights reserved.</p>
         </footer>
     </div>
 
@@ -129,18 +129,18 @@
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // 1. HEADER
+        // 1. HEADER (Title attributes aggiunti sui bottoni)
         document.getElementById('header-container').innerHTML = `
-            <img src="${config.hero.profilePicture}" alt="Profile" class="w-24 md:w-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
+            <img src="${config.hero.profilePicture}" alt="Luca Podavini Profile Picture" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600">
             <h1 class="text-3xl md:text-5xl tracking-[0.3em] font-light mb-8 text-white">${config.hero.name}</h1>
             <h2 class="text-base md:text-lg tracking-widest mb-2 font-medium">${config.hero.title}</h2>
             <h3 class="text-sm md:text-md text-gray-300 font-light mb-3">${config.hero.subtitle}</h3>
             <p class="text-xs md:text-sm italic text-gray-400 mb-8">${config.hero.university}</p>
             <div class="flex justify-center gap-4 mb-10">
-                <a href="${config.hero.socials.github}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank"><i class="fa-brands fa-github text-lg"></i></a>
-                <a href="${config.hero.socials.linkedin}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank"><i class="fa-brands fa-linkedin text-lg"></i></a>
-                <a href="${config.hero.socials.email}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0"><i class="fa-solid fa-envelope text-lg"></i></a>
-                <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank"><i class="fa-solid fa-file-pdf text-lg"></i></a>
+                <a href="${config.hero.socials.github}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="Github Page"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="${config.hero.socials.linkedin}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="${config.hero.socials.email}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" title="Email Me"><i class="fa-solid fa-envelope text-lg"></i></a>
+                <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="CV PDF"><i class="fa-solid fa-file-pdf text-lg"></i></a>
             </div>
             <div class="flex flex-wrap justify-center gap-3">
                 <a href="#about" class="btn-outline text-xs">About Me</a>
@@ -152,13 +152,16 @@
 
         document.getElementById('about-container').innerHTML = config.about.map(p => `<p>${p}</p>`).join('');
 
-        // 3. PROJECTS (Smart Layout ibrido JS/Tailwind)
+        // 3. PROJECTS
         const projectsHtml = config.projects.map((proj, index) => {
             const isEven = index % 2 === 0;
 
+            // Generazione dinamica dell'alt text e aria-label per accessibilità
+            const altText = `Preview: ${proj.title}${proj.subtitle ? ', ' + proj.subtitle : ''}`;
+
             const mediaTag = proj.preview.endsWith('.mp4')
-                ? `<video src="${proj.preview}" autoplay muted loop playsinline class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover"></video>`
-                : `<img src="${proj.preview}" alt="${proj.title}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover">`;
+                ? `<video src="${proj.preview}" autoplay muted loop playsinline aria-label="${altText}" title="${altText}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover"></video>`
+                : `<img src="${proj.preview}" alt="${altText}" title="${altText}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover">`;
 
             // Bottoni dinamicamente filtrati
             let buttonsHtml = '';
@@ -235,7 +238,7 @@
                             <h3 class="text-[0.9rem] tracking-[0.15em] font-bold text-white uppercase"><span class="font-bold">${edu.title}</span></h3>
                             <p class="text-sm text-gray-300 mt-1 font-medium">${edu.course}</p>
                         </div>
-                        <img src="${edu.logo}" alt="Logo" class="w-14 h-14 rounded object-cover border border-gray-600 bg-white shrink-0">
+                        <img src="${edu.logo}" alt="${edu.title} Logo" class="w-14 h-14 rounded object-cover border border-gray-600 bg-white shrink-0">
                     </div>
                     <div class="w-full mb-6 bg-gray-800/20 p-4 rounded border border-gray-700/50 shadow-md">
                         <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">PERIOD:</span> <span class="text-gray-200">${edu.period}</span></div>
@@ -260,7 +263,7 @@
                             <h3 class="text-[0.9rem] tracking-[0.15em] font-bold text-white mb-1 uppercase">${job.role}</h3>
                             <p class="text-sm font-semibold tracking-wider text-gray-200">${job.company} <span class="font-normal italic text-gray-400 ml-1">| ${job.location}</span></p>
                         </div>
-                        <img src="${job.companyLogo}" alt="${job.company}" class="h-8 md:h-10 object-contain shrink-0">
+                        <img src="${job.companyLogo}" alt="${job.company} Logo" class="h-8 md:h-10 object-contain shrink-0">
                     </div>
                     <div class="w-full mb-6 bg-gray-800/20 p-4 rounded border border-gray-700/50 shadow-md">
                         <div class="table-row-custom"><span class="text-gray-400 tracking-wider text-xs font-semibold">PERIOD:</span> <span class="text-gray-200">${job.period}</span></div>
@@ -276,11 +279,26 @@
         }).join('');
         document.getElementById('jobs-container').innerHTML = jobsHtml;
 
-        // FOOTER LINKS
+        // FOOTER LINKS (Ridisegnato con testi in chiaro estesi)
         document.getElementById('footer-links').innerHTML = `
-            <a href="${config.hero.socials.github}" target="_blank" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="${config.hero.socials.linkedin}" target="_blank" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="${config.hero.socials.email}" class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"><i class="fa-solid fa-envelope"></i> Email</a>
+            <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-14 mb-4 text-sm px-6">
+                <div class="flex flex-col gap-4 items-start mx-auto md:mx-0">
+                    <a href="${config.hero.socials.github}" target="_blank" class="text-gray-400 hover:text-white transition flex items-center gap-3">
+                        <i class="fa-brands fa-github text-lg w-5 text-center"></i> ${config.hero.socials.githubHandle}
+                    </a>
+                    <a href="${config.hero.socials.linkedin}" target="_blank" class="text-gray-400 hover:text-white transition flex items-center gap-3">
+                        <i class="fa-brands fa-linkedin text-lg w-5 text-center"></i> ${config.hero.socials.linkedinHandle}
+                    </a>
+                </div>
+                <div class="flex flex-col gap-4 items-start mx-auto md:mx-0">
+                    <a href="${config.hero.socials.email}" class="text-gray-400 hover:text-white transition flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-lg w-5 text-center"></i> ${config.hero.socials.emailAddress}
+                    </a>
+                    <a href="${config.hero.socials.uniEmail}" class="text-gray-400 hover:text-white transition flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-lg w-5 text-center"></i> ${config.hero.socials.uniEmailAddress}
+                    </a>
+                </div>
+            </div>
         `;
 
         // SCROLL TOP LOGIC
@@ -299,7 +317,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // --- INTELLIGENT LAYOUT ALGORITHM ---
+        // INTELLIGENT LAYOUT ALGORITHM
         function alignProjectCards() {
             const isMobile = window.innerWidth < 768;
 
@@ -313,27 +331,22 @@
                     sideContent.classList.add('hidden');
                     bottomContent.classList.remove('hidden');
                 } else {
-                    // Forziamo il layout affiancato temporaneamente per misurare gli spazi
                     sideContent.classList.remove('hidden');
                     bottomContent.classList.add('hidden');
 
                     const textHeight = textHeader.offsetHeight;
                     const mediaHeight = media.offsetHeight;
 
-                    // Se il blocco testo totale è più alto dell'immagine + una tolleranza di 70px, 
-                    // allora manda la descrizione a capo, sennò mantienila di fianco
-                    if (textHeight > mediaHeight + 100) {
+                    if (textHeight > mediaHeight + 70) {
                         sideContent.classList.add('hidden');
                         bottomContent.classList.remove('hidden');
                     }
                 }
                 
-                // Rivelazione fluida per evitare flickering
                 card.classList.remove('opacity-0');
             });
         }
 
-        // Lanciamo il calcolo quando caricano i media (per avere le altezze corrette)
         window.addEventListener('load', () => {
             alignProjectCards();
             setTimeout(alignProjectCards, 500); 
