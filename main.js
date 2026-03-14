@@ -11,7 +11,7 @@ export async function initApp(lang) {
 
     const projectsHtml = config.projects.map((proj, index) => {
         const isEven = index % 2 === 0;
-        const altText = `${ui.previewAlt} ${proj.title}${proj.subtitle ? ', ' + proj.subtitle : ''}`;
+        const altText = `Luca Podavini - ${ui.previewAlt} ${proj.title}${proj.subtitle ? ', ' + proj.subtitle : ''}`;
 
         const mediaTag = proj.preview.endsWith('.mp4')
             ? `<video src="${proj.preview}" autoplay muted loop playsinline aria-label="${altText}" title="${altText}" class="w-full rounded border border-gray-600/50 shadow-md bg-gray-900 object-cover"></video>`
@@ -117,7 +117,7 @@ export async function initApp(lang) {
 
             <div class="px-6 py-16 md:px-14 flex-grow">
                 <header class="text-center mb-16">
-                    <img src="${config.hero.profilePicture}" alt="Luca Podavini Profile Picture" class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600 mt-8 md:mt-0">
+                    <img src="${config.hero.profilePicture}" alt="Luca Podavini" class="w-24 md:w-28 mx-auto rounded-lg object-cover mb-6 shadow-xl border border-gray-600 mt-8 md:mt-0">
                     <h1 class="text-3xl md:text-5xl tracking-[0.3em] font-light mb-8 text-white">${config.hero.name}</h1>
                     <h2 class="text-base md:text-lg tracking-widest mb-2 font-medium">${config.hero.title}</h2>
                     <h3 class="text-sm md:text-md text-gray-300 font-light mb-3">${config.hero.subtitle}</h3>
