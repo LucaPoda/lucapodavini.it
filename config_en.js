@@ -30,8 +30,8 @@ export const config = {
             githubHandle: "github.com/LucaPoda",
             linkedin: "https://www.linkedin.com/in/luca-podavini-090ab92aa",
             linkedinHandle: "in/luca-podavini",
-            email: "mailto:info@lucapodavini.it",
-            emailAddress: "info@lucapodavini.it",
+            email: "mailto:contact@lucapodavini.it",
+            emailAddress: "contact@lucapodavini.it",
             uniEmail: "mailto:luca.podavini@studenti.unitn.it",
             uniEmailAddress: "luca.podavini@studenti.unitn.it",
             cv: "/documents/luca-podavini-cv-en.pdf"
