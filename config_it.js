@@ -34,7 +34,7 @@ export const config = {
             emailAddress: "info@lucapodavini.it",
             uniEmail: "mailto:luca.podavini@studenti.unitn.it",
             uniEmailAddress: "luca.podavini@studenti.unitn.it",
-            cv: "/assets/cv-podavini-luca.pdf" 
+            cv: "/documents/luca-podavini-cv-it.pdf" 
         }
     },
     about: [
@@ -101,7 +101,7 @@ export const config = {
             id: "deep-learning",
             title: "Parameter Efficient Fine Tuning for CLIP",
             subtitle: "DEEP LEARNING",
-            topics: "Zero-Shot CLIP, CoCoOp, CLIP-LoRA, DISEFT, Few-Shot Learning, PyTorch",
+            topics: "Zero-Shot CLIP, CoCoOp, CLIP-LoRA, DISEFT, Few-Shot Learning, PyTorch, Generative AI",
             description: "Questo progetto esplora le tecniche di Parameter Efficient Fine Tuning (PEFT) applicate al modello CLIP per risolvere problemi di classificazione di immagini. Abbiamo implementato e confrontato diversi metodi PEFT, tra cui CoCoOp, CLIP-LoRA e DISEFT, per valutarne le prestazioni in scenari di few-shot learning.",
             preview: "/assets/project-previews/preview-deep-learning.png",
             report: "/assets/projet-reports/notebook.html",
@@ -124,7 +124,7 @@ export const config = {
             title: "CLAW MACHINE",
             subtitle: "EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS",
             topics: "Embedded C, MSP-432 (ARM Cortex M4), Controllo Bluetooth, Display LCD, Motori Stepper, Servo, Macchine a Stati Finiti, Stampa 3D",
-            description: "Progetto IoT focalizzato sulla progettazione hardware e lo sviluppo software di un carroponte industriale. Per fini dimostrativi, il sistema è stato equipaggiato con un modulo di presa a polipo (claw) per simulare una macchinetta pesca-peluche. Realizzato interamente da zero: dal design del telaio in alluminio alla stampa 3D di componenti custom, fino all'ingegnerizzazione dell'elettronica e dell'architettura software in C. Presentato agli ICT Days 2024 (Fablab Trento) all'interno di uno scenario di automazione logistica ferroviaria in collaborazione con il team di Rusty Railways.",
+            description: "Progetto IoT focalizzato sulla progettazione hardware e lo sviluppo software di un carroponte industriale. Per fini dimostrativi, il sistema è stato equipaggiato con un modulo di presa a ragno (claw) per simulare una macchinetta pesca-peluche. Realizzato interamente da zero: dal design del telaio in alluminio alla stampa 3D di componenti custom, fino all'ingegnerizzazione dell'elettronica e dell'architettura software in C. Presentato agli ICT Days 2024 (Fablab Trento) all'interno di uno scenario di automazione logistica ferroviaria in collaborazione con il team di Rusty Railways.",
             preview: "/assets/project-previews/preview-embedded-software-iot.png",
             report: "https://github.com/Clown-Machine/ClawMachine/blob/main/README.md",
             github: "https://github.com/Clown-Machine/ClawMachine",

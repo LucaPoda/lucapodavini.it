@@ -34,7 +34,7 @@ export const config = {
             emailAddress: "info@lucapodavini.it",
             uniEmail: "mailto:luca.podavini@studenti.unitn.it",
             uniEmailAddress: "luca.podavini@studenti.unitn.it",
-            cv: "/assets/cv-podavini-luca.pdf"
+            cv: "/documents/luca-podavini-cv-en.pdf"
         }
     },
     about: [
@@ -101,7 +101,7 @@ export const config = {
             id: "deep-learning",
             title: "Parameter Efficient Fine Tuning for CLIP",
             subtitle: "DEEP LEARNING",
-            topics: "Zero-Shot CLIP, CoCoOp, CLIP-LoRA, DISEFT, Few-Shot Learning, PyTorch",
+            topics: "Zero-Shot CLIP, CoCoOp, CLIP-LoRA, DISEFT, Few-Shot Learning, PyTorch, Generative AI",
             description: "This project explores Parameter Efficient Fine Tuning (PEFT) techniques applied to the CLIP model for image classification tasks. We implemented and compared several PEFT methods, including CoCoOp, CLIP-LoRA, and DISEFT, to evaluate their performance in few-shot learning scenarios.",
             preview: "/assets/project-previews/preview-deep-learning.png",
             report: "/assets/projet-reports/notebook.html",
