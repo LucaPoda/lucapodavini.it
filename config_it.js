@@ -4,6 +4,7 @@ export const config = {
         projectsTitle: "Progetti",
         educationTitle: "Istruzione",
         jobsTitle: "Esperienza",
+        linksTitle: "Link Utili",
         connect: "Creiamo qualcosa di grande.",
         rights: "Tutti i diritti riservati.",
         period: "PERIODO:",
@@ -206,5 +207,52 @@ export const config = {
             note: "*Esperienza pratica nello sviluppo web back-end e front-end durante un tirocinio di un mese all'estero tramite programma PON.",
             tech: "Python | JavaScript | Django | React | Redux"
         }
-    ]
+    ],
+    // Aggiungi questo dentro l'oggetto config in config_it.js
+    links: {
+        bio: "Informatica | Sistemi AI e Robotica | Musica | Vela",
+        sections: [
+            {
+                title: "SOCIAL & CONTATTI",
+                items: [
+                    { label: "Sito Web", url: "/", icon: "fa-solid fa-globe", desktopClass: "md:col-span-6" },
+                    { label: "GitHub", url: "https://github.com/LucaPoda", icon: "fa-brands fa-github", desktopClass: "md:col-span-3" },
+                    { label: "LinkedIn", url: "https://www.linkedin.com/in/luca-podavini-090ab92aa", icon: "fa-brands fa-linkedin", desktopClass: "md:col-span-3" },
+                    { label: "Instagram", url: "https://instagram.com/lucaapoda", icon: "fa-brands fa-instagram", desktopClass: "md:col-span-3" },
+                    { label: "Telegram", url: "https://t.me/lucapoda", icon: "fa-solid fa-paper-plane", desktopClass: "md:col-span-3" },
+                    
+                    // Nuovo elemento divisore che occuperà tutta la riga
+                    { type: "subtitle", label: "Email" },
+                    
+                    // Label accorciate per farle stare comodamente in un terzo di riga
+                    { label: "Personale", url: "mailto:lucapoda02@gmail.com", icon: "fa-solid fa-envelope", desktopClass: "md:col-span-2" },
+                    { label: "Università", url: "mailto:luca.podavini@studenti.unitn.it", icon: "fa-solid fa-graduation-cap", desktopClass: "md:col-span-2" },
+                    { label: "Professionale", url: "mailto:contact@lucapodavini.it", icon: "fa-solid fa-briefcase", desktopClass: "md:col-span-2" }
+                ]
+            },
+            {
+                title: "MUSICA",
+                items: [
+                    { label: "Poda DJ", url: "https://instagram.com/poda.dj", icon: "fa-solid fa-compact-disc", desktopClass: "md:col-span-3" },
+                    { label: "Partyhive", url: "https://instagram.com/partyhive.tn", icon: "fa-solid fa-users", desktopClass: "md:col-span-3" },
+                    { label: "SoundCloud", url: "https://soundcloud.com/poda-dj", icon: "fa-brands fa-soundcloud", desktopClass: "md:col-span-3" },
+                    { label: "Spotify", url: "https://open.spotify.com/user/cdpayi46m5l6rlld440fc7asl?si=jA99BqIvShG1MseGh_q01w", icon: "fa-brands fa-spotify", desktopClass: "md:col-span-3" }
+                ]
+            },
+            {
+                title: "UNIVERSITÀ",
+                items: [
+                    { label: "Magistrale: Sistemi AI e Robotica", url: "https://corsi.unitn.it/en/artificial-intelligence-systems", icon: "fa-solid fa-robot", desktopClass: "md:col-span-3" },
+                    { label: "Triennale: Informatica", url: "https://corsi.unitn.it/it/informatica-laurea", icon: "fa-solid fa-code", desktopClass: "md:col-span-3" }
+                ]
+            },
+            {
+                title: "PROGETTI SELEZIONATI",
+                items: [
+                    // Centrato occupando 4 colonne su 6 e partendo dalla colonna 2
+                    { label: "Visita il mio portfolio progetti", url: "/#projects", icon: "fa-solid fa-arrow-right", desktopClass: "md:col-span-4 md:col-start-2" }
+                ]
+            }
+        ]
+    }
 };

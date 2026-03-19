@@ -127,6 +127,7 @@ export async function initApp(lang) {
                         <a href="${config.hero.socials.linkedin}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="${ui.linkedinTitle}"><i class="fa-brands fa-linkedin text-lg"></i></a>
                         <a href="${config.hero.socials.email}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" title="${ui.emailTitle}"><i class="fa-solid fa-envelope text-lg"></i></a>
                         <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="${ui.cvTitle}"><i class="fa-solid fa-address-card text-lg"></i></a>
+                        <a href="${lang === 'it' ? '/links/' : '/en/links/'}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" title="${ui.linksTitle}"><i class="fa-solid fa-link text-lg"></i></a>
                     </div>
                     <div class="flex flex-wrap justify-center gap-3">
                         <a href="#about" class="btn-outline text-xs">${ui.aboutTitle}</a>
@@ -245,4 +246,68 @@ export async function initApp(lang) {
             }
         }, 200); 
     }
+}
+
+export async function initLinks(lang) {
+    const module = await import(`/config_${lang}.js`);
+    const config = module.config;
+    const linksData = config.links;
+
+    const sectionsHtml = linksData.sections.map(section => `
+        <div class="mb-12 w-full">
+            <h3 class="text-[0.75rem] tracking-[0.3em] text-gray-300 font-bold uppercase mb-6 text-center drop-shadow-md">${section.title}</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                ${section.items.map(item => {
+                    // Se l'elemento è un sottotitolo/divisore
+                    if (item.type === 'subtitle') {
+                        return `
+                            <div class="col-span-1 md:col-span-6 flex items-center gap-4 mt-2 mb-1">
+                                <div class="h-px bg-gray-600/50 flex-grow"></div>
+                                <span class="text-[0.65rem] tracking-[0.2em] text-gray-500 font-bold uppercase">${item.label}</span>
+                                <div class="h-px bg-gray-600/50 flex-grow"></div>
+                            </div>
+                        `;
+                    }
+                    
+                    // Se è un normale bottone link
+                    return `
+                        <a href="${item.url}" target="_blank" class="w-full py-4 px-6 bg-gray-800/60 border border-gray-600/50 hover:bg-gray-700/80 hover:border-gray-400 transition-all rounded-xl flex items-center justify-between group backdrop-blur-sm shadow-lg ${item.desktopClass || 'md:col-span-3'}">
+                            <i class="${item.icon} text-lg text-gray-400 group-hover:text-white w-8 text-left transition-colors"></i>
+                            <span class="text-sm font-medium text-gray-200 group-hover:text-white flex-grow text-center tracking-wide transition-colors">${item.label}</span>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-gray-500 group-hover:text-gray-300 w-8 text-right transition-colors"></i>
+                        </a>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `).join('');
+
+    document.getElementById('app').innerHTML = `
+        <div class="max-w-4xl mx-auto px-4 py-8 md:py-16 min-h-screen flex flex-col items-center justify-center">
+            
+                <div class="w-full bg-[#1a1e24]/70 backdrop-blur-md rounded-[2rem] p-6 md:p-12 shadow-2xl border border-gray-700/50">
+                    <div class="absolute top-6 right-8 z-50 flex gap-2 items-center text-white">
+                    <button onclick="localStorage.setItem('preferredLang', 'en'); window.location.href='/en/links';" class="lang-btn ${lang === 'en' ? 'active' : ''}">EN</button>
+                    <span class="text-gray-500 text-xs">|</span>
+                    <button onclick="localStorage.setItem('preferredLang', 'it'); window.location.href='/links';" class="lang-btn ${lang === 'it' ? 'active' : ''}">IT</button>
+                </div>
+
+
+                <header class="text-center mb-12">
+                    <img src="${config.hero.profilePicture}" alt="Luca Podavini" class="w-28 h-28 mx-auto rounded-full object-cover mb-6 shadow-xl border-2 border-gray-500">
+                    <h1 class="text-2xl md:text-3xl tracking-[0.2em] font-bold text-white mb-3 drop-shadow-lg">${config.hero.name}</h1>
+                    <p class="text-xs md:text-sm tracking-widest text-gray-300 leading-relaxed px-4 font-medium">${linksData.bio}</p>
+                </header>
+
+                <main class="w-full flex-grow">
+                    ${sectionsHtml}
+                </main>
+            </div>
+
+            <footer class="mt-8 pb-4 text-center">
+                <p class="text-[10px] text-gray-400 tracking-widest uppercase">&copy; ${new Date().getFullYear()} Luca Podavini</p>
+            </footer>
+        </div>
+    `;
 }

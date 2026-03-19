@@ -4,6 +4,7 @@ export const config = {
         projectsTitle: "Projects",
         educationTitle: "Education",
         jobsTitle: "Experience",
+        linksTitle: "Useful Links",
         connect: "Let's build something great.",
         rights: "All rights reserved.",
         period: "PERIOD:",
@@ -206,5 +207,51 @@ export const config = {
             note: "*Practical experience in back-end and front-end web development during a one-month internship abroad through the PON program.",
             tech: "Python | JavaScript | Django | React | Redux"
         }
-    ]
+    ],
+    links: {
+        bio: "Computer Science | AI Systems & Robotics | Music | Sailing",
+        sections: [
+            {
+                title: "SOCIAL & CONTACTS",
+                items: [
+                    { label: "Website", url: "/", icon: "fa-solid fa-globe", desktopClass: "md:col-span-6" },
+                    { label: "GitHub", url: "https://github.com/LucaPoda", icon: "fa-brands fa-github", desktopClass: "md:col-span-3" },
+                    { label: "LinkedIn", url: "https://www.linkedin.com/in/luca-podavini-090ab92aa", icon: "fa-brands fa-linkedin", desktopClass: "md:col-span-3" },
+                    { label: "Instagram", url: "https://instagram.com/lucaapoda", icon: "fa-brands fa-instagram", desktopClass: "md:col-span-3" },
+                    { label: "Telegram", url: "https://t.me/lucapoda", icon: "fa-solid fa-paper-plane", desktopClass: "md:col-span-3" },
+                    
+                    // Divisore email
+                    { type: "subtitle", label: "Email" },
+                    
+                    // Label email accorciate
+                    { label: "Personal", url: "mailto:lucapoda02@gmail.com", icon: "fa-solid fa-envelope", desktopClass: "md:col-span-2" },
+                    { label: "University", url: "mailto:luca.podavini@studenti.unitn.it", icon: "fa-solid fa-graduation-cap", desktopClass: "md:col-span-2" },
+                    { label: "Professional", url: "mailto:contact@lucapodavini.it", icon: "fa-solid fa-briefcase", desktopClass: "md:col-span-2" }
+                ]
+            },
+            {
+                title: "MUSIC",
+                items: [
+                    { label: "Poda DJ", url: "https://instagram.com/poda.dj", icon: "fa-solid fa-compact-disc", desktopClass: "md:col-span-3" },
+                    { label: "Partyhive", url: "https://instagram.com/partyhive.tn", icon: "fa-solid fa-users", desktopClass: "md:col-span-3" },
+                    { label: "SoundCloud", url: "https://soundcloud.com/poda-dj", icon: "fa-brands fa-soundcloud", desktopClass: "md:col-span-3" },
+                    { label: "Spotify", url: "https://open.spotify.com/user/cdpayi46m5l6rlld440fc7asl?si=jA99BqIvShG1MseGh_q01w", icon: "fa-brands fa-spotify", desktopClass: "md:col-span-3" }
+                ]
+            },
+            {
+                title: "UNIVERSITY",
+                items: [
+                    // Nota: ho sistemato i link incrociati che c'erano nel file IT
+                    { label: "Master's: AI Systems & Robotics", url: "https://corsi.unitn.it/en/artificial-intelligence-systems", icon: "fa-solid fa-robot", desktopClass: "md:col-span-3" },
+                    { label: "Bachelor's: Computer Science", url: "https://corsi.unitn.it/it/informatica-laurea", icon: "fa-solid fa-code", desktopClass: "md:col-span-3" }
+                ]
+            },
+            {
+                title: "SELECTED PROJECTS",
+                items: [
+                    { label: "Visit my project portfolio", url: "/en/#projects", icon: "fa-solid fa-arrow-right", desktopClass: "md:col-span-4 md:col-start-2" }
+                ]
+            }
+        ]
+    }
 };
