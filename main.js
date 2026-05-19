@@ -126,7 +126,9 @@ export async function initApp(lang) {
                         <a href="${config.hero.socials.github}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="${ui.githubTitle}"><i class="fa-brands fa-github text-lg"></i></a>
                         <a href="${config.hero.socials.linkedin}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="${ui.linkedinTitle}"><i class="fa-brands fa-linkedin text-lg"></i></a>
                         <a href="${config.hero.socials.email}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" title="${ui.emailTitle}"><i class="fa-solid fa-envelope text-lg"></i></a>
-                        <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" target="_blank" title="${ui.cvTitle}"><i class="fa-solid fa-address-card text-lg"></i></a>
+                        <a href="${config.hero.socials.cv}" class="btn-outline w-10 h-10 flex items-center justify-center !rounded-full !px-0" target="_blank" title="${ui.cvTitle}">
+                            <img src="/assets/icons/cv.png" alt="CV" class="w-6 h-6 object-contain">
+                        </a>
                         <a href="${lang === 'it' ? '/links/' : '/en/links/'}" class="btn-outline w-10 h-10 flex items-center justify-center rounded-full !px-0" title="${ui.linksTitle}"><i class="fa-solid fa-link text-lg"></i></a>
                     </div>
                     <div class="flex flex-wrap justify-center gap-3">

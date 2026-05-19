@@ -4,7 +4,7 @@ export const config = {
         projectsTitle: "Projects",
         educationTitle: "Education",
         jobsTitle: "Experience",
-        linksTitle: "Useful Links",
+        linksTitle: "External Links",
         connect: "Let's build something great.",
         rights: "All rights reserved.",
         period: "PERIOD:",
@@ -39,8 +39,9 @@ export const config = {
         }
     },
     about: [
-        "Master's student in Artificial Intelligence Systems at the University of Trento, specializing in Intelligent Robots. My expertise spans from Reinforcement Learning and Motion Planning to Computer Vision and Embedded Systems. I work on both high-level AI algorithms and low-level control, with a strong focus on C++, Rust, Python, PyThorch and ROS/ROS2. Currently, I am developing custom controllers for a manipulator in a collaborative environment. Outside of academia, I am dedicating my time to a personal project focused on visuals for small music events. My long-term goal is to discover how to merge these two passions, finding a way to integrate Artificial Intelligence and robotics into the world of live event installations in the future.",
-        "When I'm not coding or programming robots, I'm deeply involved in the music scene as a DJ and event organizer. This passion has sharpened my skills in project management, leadership, and creative problem-solving under pressure."
+        "Master’s student in Artificial Intelligence Systems at the University of Trento, specializing in Intelligent Robots. Building on a solid foundation in software and backend development, I am developing advanced skills in AI, such as Reinforcement Learning, Computer Vision, and Language Models, applied to the field of robotics.",
+        "My technical profile includes expertise in languages and frameworks such as C++, Rust, Python, PyTorch, and ROS/ROS2. Currently, I am focused on the application of manipulators in collaborative environments. Additionally, I am developing a custom application for managing live visuals, which requires advanced real-time data processing and a multi-threaded architecture. My goal is to merge these experiences, bringing artificial intelligence and robotics into the future of live performances.",
+        "*Currently available for AI or Backend Developer opportunities (PDF CV available at the top of the page)."
     ],
     projects: [
         {
@@ -65,39 +66,39 @@ export const config = {
             github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
             demo: ""
         },
-        {
-            id: "humanoid-tsid",
-            title: "REACTIVE CONTROL (TSID) on HUMANOID ROBOT",
-            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
-            topics: "Reactive Control, Task Space Inverse Dynamics (TSID), Humanoid Robotics",
-            description: "First assignment of the Optimization and Learning for Robot Control course. Development of a reactive control framework based on Task Space Inverse Dynamics (TSID) to enable a humanoid robot to track complex trajectories and perform walking motions while maintaining dynamic balance.",
-            preview: "/assets/project-previews/preview-reactive-control.png",
-            report: "/assets/projet-reports/report-reactive-control.pdf",
-            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
-            demo: ""
-        },
-        {
-            id: "ur5-optimal-control",
-            title: "OPTIMAL CONTROL for UR5 MANIPULATOR",
-            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
-            topics: "Optimal Control, UR5 Manipulator, Trajectory Optimization",
-            description: "Second assignment of the Optimization and Learning for Robot Control course, focused on Optimal Control. Application of optimization techniques for trajectory tracking and path tracking on a UR5 industrial robotic arm.",
-            preview: "/assets/project-previews/preview-optimal-control.jpeg",
-            report: "/assets/projet-reports/report-optimal-control.pdf", 
-            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
-            demo: ""
-        },
-        {
-            id: "automated-planning",
-            title: "INTERPLANETARY MUSEUM VAULT",
-            subtitle: "AUTOMATED PLANNING, THEORY AND PRACTICE",
-            topics: "Classical Planning, Temporal Planning, Hierarchical Task Networks, PDDL, HDDL",
-            description: "Task planning project set in an 'Interplanetary Museum Vault'. Implementation and performance comparison of various planning techniques and multiple solvers (classical, temporal, and HTN networks) to discover their peculiarities and limitations.",
-            preview: "/assets/project-previews/preview-automated-planning.png",
-            report: "/assets/projet-reports/report-automated-planning.pdf",
-            github: "https://github.com/Frasor2002/AP_Project",
-            demo: ""
-        },
+        // {
+        //     id: "humanoid-tsid",
+        //     title: "REACTIVE CONTROL (TSID) on HUMANOID ROBOT",
+        //     subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+        //     topics: "Reactive Control, Task Space Inverse Dynamics (TSID), Humanoid Robotics",
+        //     description: "First assignment of the Optimization and Learning for Robot Control course. Development of a reactive control framework based on Task Space Inverse Dynamics (TSID) to enable a humanoid robot to track complex trajectories and perform walking motions while maintaining dynamic balance.",
+        //     preview: "/assets/project-previews/preview-reactive-control.png",
+        //     report: "/assets/projet-reports/report-reactive-control.pdf",
+        //     github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
+        //     demo: ""
+        // },
+        // {
+        //     id: "ur5-optimal-control",
+        //     title: "OPTIMAL CONTROL for UR5 MANIPULATOR",
+        //     subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+        //     topics: "Optimal Control, UR5 Manipulator, Trajectory Optimization",
+        //     description: "Second assignment of the Optimization and Learning for Robot Control course, focused on Optimal Control. Application of optimization techniques for trajectory tracking and path tracking on a UR5 industrial robotic arm.",
+        //     preview: "/assets/project-previews/preview-optimal-control.jpeg",
+        //     report: "/assets/projet-reports/report-optimal-control.pdf", 
+        //     github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
+        //     demo: ""
+        // },
+        // {
+        //     id: "automated-planning",
+        //     title: "INTERPLANETARY MUSEUM VAULT",
+        //     subtitle: "AUTOMATED PLANNING, THEORY AND PRACTICE",
+        //     topics: "Classical Planning, Temporal Planning, Hierarchical Task Networks, PDDL, HDDL",
+        //     description: "Task planning project set in an 'Interplanetary Museum Vault'. Implementation and performance comparison of various planning techniques and multiple solvers (classical, temporal, and HTN networks) to discover their peculiarities and limitations.",
+        //     preview: "/assets/project-previews/preview-automated-planning.png",
+        //     report: "/assets/projet-reports/report-automated-planning.pdf",
+        //     github: "https://github.com/Frasor2002/AP_Project",
+        //     demo: ""
+        // },
         {
             id: "deep-learning",
             title: "Parameter Efficient Fine Tuning for CLIP",
@@ -217,8 +218,8 @@ export const config = {
                     { label: "Website", url: "/", icon: "fa-solid fa-globe", desktopClass: "md:col-span-6" },
                     { label: "GitHub", url: "https://github.com/LucaPoda", icon: "fa-brands fa-github", desktopClass: "md:col-span-3" },
                     { label: "LinkedIn", url: "https://www.linkedin.com/in/luca-podavini-090ab92aa", icon: "fa-brands fa-linkedin", desktopClass: "md:col-span-3" },
-                    { label: "Instagram", url: "https://instagram.com/lucaapoda", icon: "fa-brands fa-instagram", desktopClass: "md:col-span-3" },
-                    { label: "Telegram", url: "https://t.me/lucapoda", icon: "fa-solid fa-paper-plane", desktopClass: "md:col-span-3" },
+                    // { label: "Instagram", url: "https://instagram.com/lucaapoda", icon: "fa-brands fa-instagram", desktopClass: "md:col-span-3" },
+                    // { label: "Telegram", url: "https://t.me/lucapoda", icon: "fa-solid fa-paper-plane", desktopClass: "md:col-span-3" },
                     
                     // Divisore email
                     { type: "subtitle", label: "Email" },
@@ -227,15 +228,6 @@ export const config = {
                     { label: "Personal", url: "mailto:lucapoda02@gmail.com", icon: "fa-solid fa-envelope", desktopClass: "md:col-span-2" },
                     { label: "University", url: "mailto:luca.podavini@studenti.unitn.it", icon: "fa-solid fa-graduation-cap", desktopClass: "md:col-span-2" },
                     { label: "Professional", url: "mailto:contact@lucapodavini.it", icon: "fa-solid fa-briefcase", desktopClass: "md:col-span-2" }
-                ]
-            },
-            {
-                title: "MUSIC",
-                items: [
-                    { label: "Poda DJ", url: "https://instagram.com/poda.dj", icon: "fa-solid fa-compact-disc", desktopClass: "md:col-span-3" },
-                    { label: "Partyhive", url: "https://instagram.com/partyhive.tn", icon: "fa-solid fa-users", desktopClass: "md:col-span-3" },
-                    { label: "SoundCloud", url: "https://soundcloud.com/poda-dj", icon: "fa-brands fa-soundcloud", desktopClass: "md:col-span-3" },
-                    { label: "Spotify", url: "https://open.spotify.com/user/cdpayi46m5l6rlld440fc7asl?si=jA99BqIvShG1MseGh_q01w", icon: "fa-brands fa-spotify", desktopClass: "md:col-span-3" }
                 ]
             },
             {
@@ -251,7 +243,15 @@ export const config = {
                 items: [
                     { label: "Visit my project portfolio", url: "/en/#projects", icon: "fa-solid fa-arrow-right", desktopClass: "md:col-span-4 md:col-start-2" }
                 ]
-            }
+            },
+            {
+                title: "EXTRA",
+                items: [
+                    { label: "Poda DJ", url: "https://instagram.com/poda.dj", icon: "fa-solid fa-headphones", desktopClass: "md:col-span-3" },
+                    { label: "Partyhive", url: "https://instagram.com/partyhive.tn", icon: "fa-solid fa-users", desktopClass: "md:col-span-3" },
+                ]
+            },
+            
         ]
     }
 };

@@ -39,8 +39,9 @@ export const config = {
         }
     },
     about: [
-        "Studente magistrale in Artificial Intelligence Systems all'Università di Trento, che si sta specializzando in Intelligent Robots. Le mie competenze spaziano dal Reinforcement Learning al Motion Planning, fino alla Computer Vision e ai Sistemi Embedded. Lavoro sia sugli algoritmi AI ad alto livello che sul controllo a basso livello, con una forte specializzazione in C++, Rust, Python, PyTorch e ROS/ROS2. Attualmente sto sviluppando controller custom per un manipolatore in un ambiente collaborativo. Fuori dall'ambito accademico, mi sto invece dedicando a un progetto personale legato ai visual per piccoli eventi musicali. Il mio obiettivo a lungo termine sarebbe di scoprire come unire queste due anime, trovando il modo di integrare in futuro l'Intelligenza Artificiale e la robotica nel mondo delle installazioni per eventi dal vivo.",
-        "Quando non scrivo codice o programmo robot, sono profondamente coinvolto nella scena musicale come DJ e organizzatore di eventi. Questa passione ha affinato le mie capacità di project management, leadership e problem-solving sotto pressione."
+        "Studente magistrale in Artificial Intelligence Systems presso l'Università di Trento, con specializzazione in Intelligent Robots. Partendo da una solida base in software e backend development, sto sviluppando competenze in AI, come Reinforcement Learning, Computer Vision e Language Models, applicate al mondo della robotica",
+        "Il mio profilo tecnico inlcude linguaggi e framework come C++, Rust, Python, PyTorch e ROS/ROS2. Attualmente, sto approfondendo l'impiego di manipolatori in contesti collaborativi, mentre nel tempo libero sto sviluppando un'applicazione dedicata alla gestione di visual per eventi musicali, che richiede una gestione avanzata dei dati in tempo reale ed un architettura multi-thread. Il mio obiettivo è fondere queste esperienze, portando l'intelligenza artificiale e la robotica nel futuro delle esibizioni dal vivo.",
+        "*Attualmente disponibile per opportunità come AI o Backend Developer (CV in PDF disponibile in cima alla pagina)."
     ],
     projects: [
         {
@@ -233,7 +234,7 @@ export const config = {
             {
                 title: "MUSICA",
                 items: [
-                    { label: "Poda DJ", url: "https://instagram.com/poda.dj", icon: "fa-solid fa-compact-disc", desktopClass: "md:col-span-3" },
+                    { label: "Poda DJ", url: "https://instagram.com/poda.dj", icon: "fa-solid fa-headphones", desktopClass: "md:col-span-3" },
                     { label: "Partyhive", url: "https://instagram.com/partyhive.tn", icon: "fa-solid fa-users", desktopClass: "md:col-span-3" },
                     { label: "SoundCloud", url: "https://soundcloud.com/poda-dj", icon: "fa-brands fa-soundcloud", desktopClass: "md:col-span-3" },
                     { label: "Spotify", url: "https://open.spotify.com/user/cdpayi46m5l6rlld440fc7asl?si=jA99BqIvShG1MseGh_q01w", icon: "fa-brands fa-spotify", desktopClass: "md:col-span-3" }
