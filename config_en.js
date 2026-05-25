@@ -40,8 +40,9 @@ export const config = {
     },
     about: [
         "Master’s student in Artificial Intelligence Systems at the University of Trento, specializing in Intelligent Robots. Building on a solid foundation in software and backend development, I am developing advanced skills in AI, such as Reinforcement Learning, Computer Vision, and Language Models, applied to the field of robotics.",
-        "My technical profile includes expertise in languages and frameworks such as C++, Rust, Python, PyTorch, and ROS/ROS2. Currently, I am focused on the application of manipulators in collaborative environments. Additionally, I am developing a custom application for managing live visuals, which requires advanced real-time data processing and a multi-threaded architecture. My goal is to merge these experiences, bringing artificial intelligence and robotics into the future of live performances.",
-        "*Currently available for AI or Backend Developer opportunities (PDF CV available at the top of the page)."
+        "My technical profile includes expertise in languages and frameworks such as C++, Rust, Python, PyTorch, and ROS/ROS2. Over the past year, I have explored various machine learning and deep learning techniques, applying them to problems in Natural Language Processing, Computer Vision, and Robot control.",
+        "Currently, I am focused on the application of manipulators in collaborative environments. Additionally, I am developing a custom application for managing live visuals, which requires advanced real-time data processing and a multi-threaded architecture. My goal is to merge these experiences, bringing artificial intelligence and robotics into the future of live performances.",
+        // "*Currently available for AI or Backend Developer opportunities (PDF CV available at the top of the page)."
     ],
     projects: [
         {
@@ -57,7 +58,7 @@ export const config = {
         },
         {
             id: "unicycle-rl",
-            title: "REINFORCEMENT LEARNING for UNICYCLE ROBOT",
+            title: "REINFORCEMENT LEARNING for UNICYCLE ROBOT NAVIGATION",
             subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
             topics: "Reinforcement Learning, PPO Algorithm, REINFORCE algorithm, Unicycle Kinematics, Trajectory Tracking, Navigation, Obstacle Avoidance, LIDAR",
             description: "Final and most significant assignment of the Optimization and Learning for Robot Control course. Various reinforcement learning techniques applied to a unicycle robot were explored. Implemented trajectory tracking using the REINFORCE algorithm and the PPO (Proximal Policy Optimization) algorithm to solve a full autonomous navigation problem in an obstacle-dense environment (as shown in the preview).",
@@ -66,28 +67,28 @@ export const config = {
             github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
             demo: ""
         },
-        // {
-        //     id: "humanoid-tsid",
-        //     title: "REACTIVE CONTROL (TSID) on HUMANOID ROBOT",
-        //     subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
-        //     topics: "Reactive Control, Task Space Inverse Dynamics (TSID), Humanoid Robotics",
-        //     description: "First assignment of the Optimization and Learning for Robot Control course. Development of a reactive control framework based on Task Space Inverse Dynamics (TSID) to enable a humanoid robot to track complex trajectories and perform walking motions while maintaining dynamic balance.",
-        //     preview: "/assets/project-previews/preview-reactive-control.png",
-        //     report: "/assets/projet-reports/report-reactive-control.pdf",
-        //     github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
-        //     demo: ""
-        // },
-        // {
-        //     id: "ur5-optimal-control",
-        //     title: "OPTIMAL CONTROL for UR5 MANIPULATOR",
-        //     subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
-        //     topics: "Optimal Control, UR5 Manipulator, Trajectory Optimization",
-        //     description: "Second assignment of the Optimization and Learning for Robot Control course, focused on Optimal Control. Application of optimization techniques for trajectory tracking and path tracking on a UR5 industrial robotic arm.",
-        //     preview: "/assets/project-previews/preview-optimal-control.jpeg",
-        //     report: "/assets/projet-reports/report-optimal-control.pdf", 
-        //     github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
-        //     demo: ""
-        // },
+        {
+            id: "humanoid-tsid",
+            title: "REACTIVE CONTROL (TSID) on HUMANOID ROBOT",
+            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+            topics: "Reactive Control, Task Space Inverse Dynamics (TSID), Humanoid Robotics",
+            description: "First assignment of the Optimization and Learning for Robot Control course. Development of a reactive control framework based on Task Space Inverse Dynamics (TSID) to enable a humanoid robot to track complex trajectories and perform walking motions while maintaining dynamic balance.",
+            preview: "/assets/project-previews/preview-reactive-control.png",
+            report: "/assets/projet-reports/report-reactive-control.pdf",
+            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
+            demo: ""
+        },
+        {
+            id: "ur5-optimal-control",
+            title: "OPTIMAL CONTROL for UR5 MANIPULATOR",
+            subtitle: "OPTIMIZATION & LEARNING FOR ROBOT CONTROL",
+            topics: "Optimal Control, UR5 Manipulator, Trajectory Optimization",
+            description: "Second assignment of the Optimization and Learning for Robot Control course, focused on Optimal Control. Application of optimization techniques for trajectory tracking and path tracking on a UR5 industrial robotic arm.",
+            preview: "/assets/project-previews/preview-optimal-control.jpeg",
+            report: "/assets/projet-reports/report-optimal-control.pdf", 
+            github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
+            demo: ""
+        },
         // {
         //     id: "automated-planning",
         //     title: "INTERPLANETARY MUSEUM VAULT",

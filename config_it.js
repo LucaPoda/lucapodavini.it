@@ -40,8 +40,9 @@ export const config = {
     },
     about: [
         "Studente magistrale in Artificial Intelligence Systems presso l'Università di Trento, con specializzazione in Intelligent Robots. Partendo da una solida base in software e backend development, sto sviluppando competenze in AI, come Reinforcement Learning, Computer Vision e Language Models, applicate al mondo della robotica",
-        "Il mio profilo tecnico inlcude linguaggi e framework come C++, Rust, Python, PyTorch e ROS/ROS2. Attualmente, sto approfondendo l'impiego di manipolatori in contesti collaborativi, mentre nel tempo libero sto sviluppando un'applicazione dedicata alla gestione di visual per eventi musicali, che richiede una gestione avanzata dei dati in tempo reale ed un architettura multi-thread. Il mio obiettivo è fondere queste esperienze, portando l'intelligenza artificiale e la robotica nel futuro delle esibizioni dal vivo.",
-        "*Attualmente disponibile per opportunità come AI o Backend Developer (CV in PDF disponibile in cima alla pagina)."
+        "Il mio profilo tecnico inlcude linguaggi e framework come C++, Rust, Python, PyTorch e ROS/ROS2. Nell'ultimo anno ho approfondito diverse tecniche di machine learning e deep learning, applicate a problemi di Natural Language Processing, Computer Vision e controllo di Robot.",
+        "Attualmente, sto approfondendo il controllo di manipolatori in contesti collaborativi, mentre nel tempo libero sto sviluppando un'applicazione dedicata alla gestione di visual per eventi musicali, che richiede una gestione avanzata dei dati in tempo reale ed un architettura multi-thread. Il mio obiettivo è fondere queste esperienze, portando l'intelligenza artificiale e la robotica nel futuro delle esibizioni dal vivo.",
+        // "*Attualmente disponibile per opportunità come AI o Backend Developer (CV in PDF disponibile in cima alla pagina)."
     ],
     projects: [
         {
@@ -88,17 +89,17 @@ export const config = {
             github: "https://github.com/orgs/orc-podavini-grisenti/repositories",
             demo: ""
         },
-        {
-            id: "automated-planning",
-            title: "INTERPLANETARY MUSEUM VAULT",
-            subtitle: "AUTOMATED PLANNING, THEORY AND PRACTICE",
-            topics: "Pianificazione Classica, Pianificazione Temporale, Hierarchical Task Networks, PDDL, HDDL",
-            description: "Progetto di Task Planning ambientato in un 'Interplanetary Museum Vault'. Implementazione e confronto delle performance di diverse tecniche di pianificazione e molteplici solver (classici, temporali e reti HTN) per scoprirne peculiarità e limiti.",
-            preview: "/assets/project-previews/preview-automated-planning.png",
-            report: "/assets/projet-reports/report-automated-planning.pdf",
-            github: "https://github.com/Frasor2002/AP_Project",
-            demo: ""
-        },
+        // {
+        //     id: "automated-planning",
+        //     title: "INTERPLANETARY MUSEUM VAULT",
+        //     subtitle: "AUTOMATED PLANNING, THEORY AND PRACTICE",
+        //     topics: "Pianificazione Classica, Pianificazione Temporale, Hierarchical Task Networks, PDDL, HDDL",
+        //     description: "Progetto di Task Planning ambientato in un 'Interplanetary Museum Vault'. Implementazione e confronto delle performance di diverse tecniche di pianificazione e molteplici solver (classici, temporali e reti HTN) per scoprirne peculiarità e limiti.",
+        //     preview: "/assets/project-previews/preview-automated-planning.png",
+        //     report: "/assets/projet-reports/report-automated-planning.pdf",
+        //     github: "https://github.com/Frasor2002/AP_Project",
+        //     demo: ""
+        // },
         {
             id: "deep-learning",
             title: "Parameter Efficient Fine Tuning for CLIP",
